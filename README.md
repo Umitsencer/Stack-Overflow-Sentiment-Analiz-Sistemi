@@ -1,65 +1,59 @@
-📝 Stack Overflow Sentiment Analiz Sistemi
-Bu Python programı, Stack Overflow'dan veri çekip, bu verileri kullanarak sentiment analizi yapar. 
-Kullanıcıların yazdığı soru başlıklarını analiz ederek, her bir başlık için "Pozitif", "Negatif" veya "Nötr" sonuçlar döndürür.
+# Stack Overflow Sentiment Analizi
 
+Bu proje, Stack Overflow API'sinden belirli bir etiket (tag) ile soru başlıklarını çekerek, bu başlıklar üzerinde sentiment analizi yapmaktadır. Analiz sonucunda başlıklar "Pozitif", "Negatif" veya "Nötr" olarak sınıflandırılır ve sonuçlar grafiklerle görselleştirilir.
 
+## 📚 Proje İçeriği
+- **Stack Overflow API kullanımı**: Belirli bir etiketle 1500 adet soru başlığı çekme
+- **Sentiment analizi**: Pozitif ve negatif kelimelere dayalı basit analiz
+- **Veri görselleştirme**: Bar ve pasta grafikleri ile analiz sonucu sunma
 
-🎯 Proje Amacı
-Bu proje, Stack Overflow'daki içerikleri analiz ederek, kullanıcıların yazdığı soru başlıklarını duygu durumlarına göre sınıflandırmak ve sonuçları görselleştirmektir.
+## 🛠 Kurulum
+Projeyi çalıştırmak için aşağıdaki bağımlılıkları yüklemeniz gerekir:
 
+```bash
+pip install requests pandas matplotlib
+```
 
-🛠️ Kullanılan Teknolojiler
-Python Programlama Dili
-Pandas Kütüphanesi
-Matplotlib Kütüphanesi
-Requests Kütüphanesi
-RegEx (Düzenli İfadeler)
-Stack Overflow API
+## 📝 Kullanım
+Python dosyasını çalıştırmadan önce analiz etmek istediğiniz Stack Overflow etiketini (tag) değiştirebilirsiniz. Varsayılan olarak **"python"** etiketi kullanılmıştır.
 
+```python
+# Analiz edilecek Stack Overflow etiketi
+tag = "python"
+```
 
-⚙️ Çalışma Prensibi
-Program, Stack Overflow API'si kullanarak belirli bir etiketle ilişkilendirilmiş soruları çeker.
-Çekilen başlıklar, kelime listeleri kullanılarak analiz edilir ve başlıklar için sentiment analizi yapılır. 
-Sonuçlar, bar grafiği ve pasta grafiği ile görselleştirilir.
+Kodunuzu aşağıdaki komut ile çalıştırabilirsiniz:
 
+```bash
+python sentiment_analysis.py
+```
 
+## 📊 Çıktılar
+Kod çalıştırıldıktan sonra:
+1. Çekilen ilk 20 soru başlığı ekrana yazdırılır.
+2. Başlıklara sentiment analizi uygulanır ve her biri **Pozitif**, **Negatif** veya **Nötr** olarak etiketlenir.
+3. Analiz sonuçları bar ve pasta grafikleri ile görselleştirilir.
 
-📋 Temel Özellikler
-Stack Overflow API'den veri çekme
-Soru başlıklarına sentiment analizi uygulama
-Sentiment sonuçlarını görselleştirme (Bar ve Pasta Grafiği)
-Genişletilmiş pozitif ve negatif kelime grupları kullanma
-Otomatik hata yönetimi
+## 🌐 API Kullanımı
+Kod, Stack Overflow API'sinden veri çekmek için aşağıdaki endpoint'i kullanır:
+```
+https://api.stackexchange.com/2.3/questions
+```
+Parametreler:
+- `order=desc` (Son eklenenlerden başlayarak sıralama)
+- `sort=creation` (Oluşturulma tarihine göre sıralama)
+- `tagged=python` (İlgili etiket)
+- `site=stackoverflow` (Stack Overflow verileri çekme)
+- `pagesize=100` (Her istekte 100 veri çekme)
 
+## 🌟 Örnek Sonuç
+| Başlık | Sentiment |
+|--------|----------|
+| How to efficiently sort a dictionary in Python? | Pozitif |
+| Python program crashes on startup | Negatif |
+| Best way to iterate over a large dataset in pandas? | Pozitif |
+| Unable to install NumPy on Windows | Negatif |
 
+## ✅ Lisans
+Bu proje MIT Lisansı ile lisanslanmıştır. Serbestçe kullanabilir, dağıtabilir ve geliştirebilirsiniz.
 
-🖥️ Örnek Çıktı
-'python' etiketi ile Stack Overflow'dan 1500 soru çekiliyor...
-
-İlk 20 soru başlığı:
-1. How to improve my python code?
-2. Best practices for Python debugging
-3. What is the best library for data analysis in Python?
-...
-...
-İlk 20 soru başlığı için sentiment analizi sonuçları:
-1. Pozitif
-2. Negatif
-3. Nötr
-...
-...
-
-Sentiment analizi sonuçları (Grafik):
-  - Bar Grafiği: Pozitif, Negatif ve Nötr kategorilerinin sayıları
-  - Pasta Grafiği: Her kategorinin yüzdesel dağılımı
-
-    
-⚠️ Hata Yönetimi
-API istek hatalarına karşı kontrol
-Geçersiz veriler için kontrol
-
-
-📜 Lisans
-Bu proje eğitim ve araştırma amaçlı geliştirilmiştir.
-
-🚀 İyi çalışmalar! 😊
