@@ -55,5 +55,7 @@ Parametreler:
 | Unable to install NumPy on Windows | Negatif |
 
 ## ✅ Lisans
-Bu proje MIT Lisansı ile lisanslanmıştır. Serbestçe kullanabilir, dağıtabilir ve geliştirebilirsiniz.
+Bu proje eğitim amaçlı geliştirilmiştir.
+
+🚀 İyi çalışmalar! 😊
 
